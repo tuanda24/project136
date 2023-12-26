@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -114,7 +115,7 @@ public class LoginActivity extends AppCompatActivity {
     TextView tvNavigateSignIn, tvForgetPass;
     Button btnLogin;
     CheckBox cbRememberMe;
-    LinearLayout contain2 = findViewById(R.id.LLogIn);
+    RelativeLayout contain2;
     String tenThongTinDangNhap = "login";
 
     @Override
@@ -151,6 +152,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         // Ánh xạ
+        contain2 = findViewById(R.id.LLogIn);
         etLoginUser = findViewById(R.id.etUserLogin);
         etLoginPass = findViewById(R.id.etPassWordLogin);
         btnLogin = findViewById(R.id.btnLogIn);
@@ -158,12 +160,12 @@ public class LoginActivity extends AppCompatActivity {
         cbRememberMe = findViewById(R.id.cbRememberMe);
         tvForgetPass = findViewById(R.id.tvForgetPass);
 
-        contain2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                hideSoftKeyboard();
-            }
-        });
+//        contain2.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                hideSoftKeyboard();
+//            }
+//        });
         // Handle event navigate home screen
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
