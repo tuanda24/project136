@@ -16,13 +16,12 @@ public class IntroActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro);
         ConstraintLayout introBtn = findViewById(R.id.introBtn);
-//        introBtn.setOnClickListener(v ->
-//                startActivity(new Intent(IntroActivity.this, LoginActivity.class)));
         introBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(IntroActivity.this, LoginActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 

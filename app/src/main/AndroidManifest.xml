@@ -19,10 +19,16 @@
             android:name=".Activities.LoginActivity"
             android:exported="false" />
         <activity
+            android:name=".Activities.signUpActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activities.DetailActivity"
             android:exported="false" />
         <activity
             android:name=".Activities.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activities.FogetPassActivity"
             android:exported="false" />
         <activity
             android:name=".Activities.IntroActivity"

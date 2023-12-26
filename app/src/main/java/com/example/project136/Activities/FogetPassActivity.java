@@ -1,4 +1,4 @@
-package com.example.project136.settings;
+package com.example.project136.Activities;
 
 import android.os.Bundle;
 import android.text.TextUtils;

@@ -1,9 +1,7 @@
 package com.example.project136.Activities;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -12,7 +10,6 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,7 +17,6 @@ import android.widget.Toast;
 import com.example.project136.R;
 import com.example.project136.models.DBHandler;
 import com.example.project136.models.User;
-import com.example.project136.settings.FogetPassActivity;
 
 import java.util.Map;
 
@@ -160,13 +156,13 @@ public class LoginActivity extends AppCompatActivity {
         cbRememberMe = findViewById(R.id.cbRememberMe);
         tvForgetPass = findViewById(R.id.tvForgetPass);
 
-//        contain2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                hideSoftKeyboard();
-//            }
-//        });
-        // Handle event navigate home screen
+        contain2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                hideSoftKeyboard();
+            }
+        });
+         //Handle event navigate home screen
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
