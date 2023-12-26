@@ -5,8 +5,11 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,6 +20,7 @@ import com.example.project136.Domains.PopularDomain;
 import com.example.project136.R;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
@@ -29,11 +33,30 @@ public class MainActivity extends AppCompatActivity  {
     private RecyclerView recyclerViewPopular, recyclerViewCategory;
     private SearchView searchView;
     public ArrayList<PopularDomain> items;
+    private DrawerLayout drawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        drawerLayout = findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+//        drawerLayout.openDrawer(GravityCompat.START);
+        BottomNavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int id = item.getItemId();
+
+                // Handle each item click as needed
+                if (id == R.id.navigation_setting) {
+                    drawerLayout.openDrawer(GravityCompat.START);
+                }
+                return true;
+            }
+        });
         initRecyclerView();
 
 
@@ -107,5 +130,14 @@ public class MainActivity extends AppCompatActivity  {
                 return true;
             }
         });
+    }
+    @Override
+    public void onBackPressed() {
+        if(drawerLayout.isDrawerOpen(GravityCompat.START)){
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }
+        else {
+            super.onBackPressed();
+        }
     }
 }
