@@ -24,7 +24,8 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity  {
 
-    private RecyclerView.Adapter adapterPopular, adapterCat;
+    private RecyclerView.Adapter  adapterCat;
+    private PopularAdapter adapterPopular;
     private RecyclerView recyclerViewPopular, recyclerViewCategory;
     private SearchView searchView;
     public ArrayList<PopularDomain> items;
@@ -87,7 +88,7 @@ public class MainActivity extends AppCompatActivity  {
             @Override
             public boolean onQueryTextChange(String newText) {
                 String searchText = newText.trim().toLowerCase();
-                List<PopularDomain> filteredList = new ArrayList<>();
+                ArrayList<PopularDomain> filteredList = new ArrayList<>();
                 for (PopularDomain item : items) {
                     String location = item.getLocation().toLowerCase();
                     if (location.contains(searchText)) {
@@ -99,8 +100,8 @@ public class MainActivity extends AppCompatActivity  {
                     Toast.makeText(MainActivity.this, "No items found", Toast.LENGTH_SHORT).show();
                 } else {
                     // Update the adapter with the filtered list
-                    adapterPopular = new PopularAdapter(items);
-                    recyclerViewPopular.setAdapter(adapterPopular);
+                    adapterPopular.setItems(filteredList);
+
                 }
 
                 return true;

@@ -31,6 +31,11 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHold
 //        notifyDataSetChanged();
     }
 
+    public void setItems(ArrayList<PopularDomain> items) {
+        this.items = items;
+        this.notifyDataSetChanged();
+    }
+
     @NonNull
     @Override
     public PopularAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
