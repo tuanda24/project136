@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class DBHandler extends SQLiteOpenHelper {
     public static final int DATABASE_VERSION = 1;
-    public static final String DATABASE_NAME = "fima.db";
+    public static final String DATABASE_NAME = "travel.db";
     private static final String USERS = "users";
     private static final String USER_EXPENSES = "user_expenses";
     private static final String TARGET = "target";
