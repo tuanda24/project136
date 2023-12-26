@@ -1,7 +1,10 @@
 package com.example.project136.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -19,6 +22,9 @@ import com.example.project136.Domains.CategoryDomain;
 import com.example.project136.Domains.PopularDomain;
 import com.example.project136.R;
 
+import com.example.project136.models.User;
+import com.example.project136.settings.changeInfor;
+import com.example.project136.settings.changePassword;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.navigation.NavigationView;
@@ -42,14 +48,15 @@ public class MainActivity extends AppCompatActivity  {
         drawerLayout = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
+
         toggle.syncState();
 //        drawerLayout.openDrawer(GravityCompat.START);
-        BottomNavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.nav_view);
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
-
                 // Handle each item click as needed
                 if (id == R.id.navigation_setting) {
                     drawerLayout.openDrawer(GravityCompat.START);
@@ -57,9 +64,38 @@ public class MainActivity extends AppCompatActivity  {
                 return true;
             }
         });
+        NavigationView navigationView = findViewById(R.id.navigation_viewV);
+        View headerView = navigationView.getHeaderView(0);
+        TextView tvUser = headerView.findViewById(R.id.tvHeaderUser);
+        TextView tvEmail = headerView.findViewById(R.id.tvHeaderEmail);
+        // Đặt text
+        String fullname = User.getInstance().getFirstname().toString() + " " + User.getInstance().getLastname().toString();
+        tvUser.setText(fullname);
+        tvEmail.setText(User.getInstance().getEmail().toString());
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int id = item.getItemId();
+                if(id == R.id.nav_changeInfo)
+                {
+                    Intent intent = new Intent(MainActivity.this, changeInfor.class);
+                    startActivity(intent);
+                }
+                if (id == R.id.nav_ChangePassword)
+                {
+                    Intent intent = new Intent(MainActivity.this, changePassword.class);
+                    startActivity(intent);
+                }
+                if (id == R.id.nav_LogOut)
+                {
+                    Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                    startActivity(intent);
+                }
+                drawerLayout.closeDrawer(GravityCompat.START);
+                return true;
+            }
+        });
         initRecyclerView();
-
-
     }
 
     private void initRecyclerView() {
@@ -93,8 +129,7 @@ public class MainActivity extends AppCompatActivity  {
         catsList.add(new CategoryDomain("Forest", "cat3"));
         catsList.add(new CategoryDomain("Desert", "cat4"));
         catsList.add(new CategoryDomain("Mountain", "cat5"));
-        catsList.add(new CategoryDomain("Desert", "cat1"));
-        catsList.add(new CategoryDomain("Mountain", "cat2"));
+
 
 
         recyclerViewCategory = findViewById(R.id.view_cat);

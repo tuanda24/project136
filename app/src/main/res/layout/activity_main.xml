@@ -51,7 +51,7 @@
                         app:layout_constraintTop_toTopOf="@+id/imageView3" />
 
                     <TextView
-                        android:id="@+id/textView5"
+                        android:id="@+id/tvHeaderUser"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
