@@ -13,7 +13,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="478dp"
         android:orientation="vertical">
 
         <TextView
@@ -23,7 +22,8 @@
             android:layout_weight="1"
             android:text="Travel Application"
             android:textColor="@color/white"
-            android:textSize="50dp"
+            android:gravity="center"
+            android:textSize="45dp"
             android:textStyle="bold" />
 
         <ImageView
@@ -43,12 +43,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:textColor="@color/white"
                 android:text="@string/fistname" />
 
             <EditText
                 android:id="@+id/etChangeFirstName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/white"
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="text" />
@@ -64,6 +66,7 @@
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/white"
                 android:layout_weight="1"
                 android:text="@string/lastname" />
 
@@ -72,6 +75,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:textColor="@color/white"
                 android:ems="10"
                 android:inputType="text" />
 
@@ -85,14 +89,14 @@
 
             <Button
                 android:id="@+id/btnUpdateProfile"
-                android:layout_width="wrap_content"
+                android:layout_width="15dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Update" />
 
             <Button
                 android:id="@+id/btnCancelUpdateProfile"
-                android:layout_width="wrap_content"
+                android:layout_width="15dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Cancel" />

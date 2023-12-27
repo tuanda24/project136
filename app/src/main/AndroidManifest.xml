@@ -31,6 +31,12 @@
             android:name=".Activities.FogetPassActivity"
             android:exported="false" />
         <activity
+            android:name=".settings.changeInfor"
+            android:exported="true"/>
+        <activity
+            android:name=".settings.changePassword"
+            android:exported="true"/>
+        <activity
             android:name=".Activities.IntroActivity"
             android:exported="true">
             <intent-filter>

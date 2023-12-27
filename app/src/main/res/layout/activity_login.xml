@@ -46,7 +46,8 @@
             android:ems="10"
             android:hint="@string/email"
             android:inputType="text"
-            android:textColorHint="@color/gray" />
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
 
         <EditText
             android:id="@+id/etPassWordLogin"
@@ -56,7 +57,8 @@
             android:hint="@string/password"
             android:inputType="text"
             android:password="true"
-            android:textColorHint="@color/gray" />
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
 
 
         <LinearLayout
@@ -69,6 +71,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:textColor="@color/white"
                 android:text="@string/Rememberme" />
 
             <TextView
@@ -87,7 +90,14 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:background="@color/blue500"
+            android:layout_marginBottom="15dp"
             android:text="LOG IN" />
+        <Button
+            android:id="@+id/btnExit"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:background="@color/blue500"
+            android:text="Exit" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -101,6 +111,7 @@
                 android:layout_weight="1"
                 android:gravity="right"
                 android:text="Don't have an account?"
+                android:textColor="@color/white"
                  />
 
             <TextView
@@ -110,7 +121,8 @@
                 android:layout_weight="1"
                 android:text="@string/tvSignIn"
                 android:textColor="@color/blue500"
-                android:textStyle="italic" />
+                android:textStyle="italic"
+                />
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

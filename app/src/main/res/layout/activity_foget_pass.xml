@@ -20,7 +20,8 @@
             android:layout_weight="1"
             android:text="Travel Application"
             android:textColor="@color/white"
-            android:textSize="50dp"
+            android:gravity="center"
+            android:textSize="45dp"
             android:textStyle="bold" />
 
 
@@ -35,6 +36,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:textColor="@color/white"
                 android:text="@string/fistname" />
 
 
@@ -42,6 +44,7 @@
                 android:id="@+id/etForPassFName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/white"
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="text" />
@@ -57,6 +60,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/white"
                 android:layout_weight="1"
                 android:text="@string/lastname" />
 
@@ -64,6 +68,7 @@
                 android:id="@+id/etForPassLName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/white"
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="text" />
@@ -79,6 +84,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/white"
                 android:layout_weight="1"
                 android:text="@string/email" />
 
@@ -86,7 +92,7 @@
                 android:id="@+id/etForPassEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
+                android:textColor="@color/white"
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="text" />
@@ -102,6 +108,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/white"
                 android:layout_weight="1"
                 android:text="New password" />
 
@@ -109,6 +116,7 @@
                 android:id="@+id/etForPassNewPass"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/white"
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="text" />
@@ -124,6 +132,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/white"
                 android:layout_weight="1"
                 android:text="@string/confirmNewpassword" />
 
@@ -131,6 +140,7 @@
                 android:id="@+id/etForPassConNewPass"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/white"
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="text" />

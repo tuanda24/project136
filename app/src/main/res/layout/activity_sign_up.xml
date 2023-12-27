@@ -40,7 +40,8 @@
                 android:ems="10"
                 android:hint="@string/fistname"
                 android:inputType="text"
-                android:textColorHint="@color/gray" />
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
 
             <EditText
                 android:id="@+id/editLastName"
@@ -50,7 +51,8 @@
                 android:ems="10"
                 android:hint="@string/lastname"
                 android:inputType="text"
-                android:textColorHint="@color/gray" />
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
         </LinearLayout>
 
         <EditText
@@ -60,7 +62,8 @@
             android:ems="10"
             android:hint="@string/email"
             android:inputType="text"
-            android:textColorHint="@color/gray" />
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
 
         <EditText
             android:id="@+id/editPassWord"
@@ -70,7 +73,8 @@
             android:hint="@string/password"
             android:inputType="text"
             android:password="true"
-            android:textColorHint="@color/gray" />
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
 
         <EditText
             android:id="@+id/editRepeatPW"
@@ -80,7 +84,8 @@
             android:hint="@string/repeatPw"
             android:inputType="text"
             android:password="true"
-            android:textColorHint="@color/gray" />
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -92,6 +97,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="I agree to the"
+                android:textColor="@color/white"
                 android:textSize="15sp" />
 
             <TextView

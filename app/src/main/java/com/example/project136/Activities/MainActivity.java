@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,6 +46,10 @@ public class MainActivity extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        LinearLayout headerMain= findViewById(R.id.header_main);
+        TextView tvUserMain = headerMain.findViewById(R.id.tvHeaderUser);
+        String fullnameMain = User.getInstance().getFirstname().toString() + " " + User.getInstance().getLastname().toString();
+        tvUserMain.setText(fullnameMain);
         drawerLayout = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
@@ -90,11 +95,13 @@ public class MainActivity extends AppCompatActivity  {
                 {
                     Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                     startActivity(intent);
+                    finish();
                 }
                 drawerLayout.closeDrawer(GravityCompat.START);
                 return true;
             }
         });
+
         initRecyclerView();
     }
 

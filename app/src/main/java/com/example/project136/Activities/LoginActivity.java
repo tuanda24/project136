@@ -109,7 +109,7 @@ import java.util.Map;
 public class LoginActivity extends AppCompatActivity {
     EditText etLoginUser, etLoginPass;
     TextView tvNavigateSignIn, tvForgetPass;
-    Button btnLogin;
+    Button btnLogin,btnExit;
     CheckBox cbRememberMe;
     RelativeLayout contain2;
     String tenThongTinDangNhap = "login";
@@ -152,6 +152,7 @@ public class LoginActivity extends AppCompatActivity {
         etLoginUser = findViewById(R.id.etUserLogin);
         etLoginPass = findViewById(R.id.etPassWordLogin);
         btnLogin = findViewById(R.id.btnLogIn);
+        btnExit = findViewById(R.id.btnExit);
         tvNavigateSignIn = findViewById(R.id.tvNavigateSignIn);
         cbRememberMe = findViewById(R.id.cbRememberMe);
         tvForgetPass = findViewById(R.id.tvForgetPass);
@@ -188,6 +189,13 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
 
+        });
+        btnExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+                finish();
+            }
         });
         // Handle event navigate sign up
         tvNavigateSignIn.setOnClickListener(new View.OnClickListener() {

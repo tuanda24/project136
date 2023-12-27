@@ -7,6 +7,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,7 +28,7 @@ public class changePassword extends AppCompatActivity {
         etConPass = findViewById(R.id.etGiveConfirmNewPassword);
         btnUpdateNewPass = findViewById(R.id.btnUpdatePass);
         btnCancelUpdateNewPass = findViewById(R.id.btnCancelUpdatePass);
-        contain4 = findViewById(R.id.LLChangePass);
+        RelativeLayout contain4 = findViewById(R.id.LLChangePass);
         contain4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
